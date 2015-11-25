@@ -89,8 +89,8 @@ def find_trailing_spaces(view):
                                                DEFAULT_IS_ENABLED))
     include_current_line = bool(ts_settings.get("trailing_spaces_include_current_line",
                                                 DEFAULT_IS_ENABLED))
-    regexp = ts_settings.get("trailing_spaces_regexp") + "$"
-    no_empty_lines_regexp = "(?<=\S)%s$" % regexp
+    regexp = ts_settings.get("trailing_spaces_regexp")
+    no_empty_lines_regexp = "(?<=\S)%s" % regexp
 
     offending_lines = view.find_all(regexp if include_empty_lines else no_empty_lines_regexp)
 
